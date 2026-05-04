@@ -1,0 +1,496 @@
+/* ═══════════════════════════════════════════════════════════
+   Contemporary Music for Gamelan — Basel, 7 June 2026
+   Stylesheet
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── VARIABILI ──────────────────────────────────────────── */
+:root {
+  --black: #0c0c0c;
+  --white: #f5f4f0;
+  --mid: #888;
+  --rule: 1px solid #0c0c0c;
+  --rule-light: 1px solid #ccc;
+}
+
+/* ─── RESET ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NAVIGAZIONE ────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  border-bottom: var(--rule);
+  background: var(--white);
+}
+
+.nav-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+}
+
+.nav-info {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--mid);
+  text-transform: uppercase;
+}
+
+.nav-ticket {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--black);
+  padding: 7px 16px;
+  border: var(--rule);
+  transition: background 0.2s, color 0.2s;
+}
+.nav-ticket:hover { background: var(--white); color: var(--black); }
+
+/* ─── HERO ───────────────────────────────────────────────── */
+.hero {
+  margin-top: 49px;
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/*
+ * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ *  DESIGNER — immagine hero
+ *  Sostituisci il placeholder con:
+ *
+ *  .hero-image-layer {
+ *    background-image: url('hero.jpg');
+ *    background-size: cover;
+ *    background-position: center;
+ *  }
+ *
+ *  oppure nell'HTML rimuovi il tag <span class="hero-image-label">
+ *  e inserisci un <img> dentro .hero-image-layer
+ * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ */
+.hero-image-layer {
+  position: absolute;
+  inset: 0;
+  background-color: #d8d5ce;
+  background-image:
+    linear-gradient(#ccc 1px, transparent 1px),
+    linear-gradient(90deg, #ccc 1px, transparent 1px);
+  background-size: 40px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: #aaa;
+  text-transform: uppercase;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  background: rgba(245,244,240,0.7);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 20%, rgba(12,12,12,0.6) 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+  padding: 60px 40px 50px;
+}
+
+.hero-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(42px, 7vw, 96px);
+  line-height: 1.0;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.25);
+  flex-wrap: wrap;
+}
+
+.hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+
+.hero-meta-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+.hero-meta-value {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #fff;
+}
+
+/* ─── LAYOUT GENERALE ────────────────────────────────────── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+section { border-top: var(--rule); }
+
+.section-inner {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0 60px;
+  padding: 60px 0;
+}
+
+.section-number {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  padding-top: 4px;
+}
+
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+  display: block;
+  margin-bottom: 24px;
+}
+
+/* ─── TESTO INTRODUTTIVO ─────────────────────────────────── */
+.intro-text {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 700px;
+}
+.intro-text strong { font-weight: 500; }
+
+/* ─── PROGRAMMA ──────────────────────────────────────────── */
+.programme-grid { display: flex; flex-direction: column; }
+
+.programme-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 16px 32px;
+  padding: 20px 0;
+  border-bottom: var(--rule-light);
+}
+.programme-item:first-child { border-top: var(--rule-light); }
+
+.prog-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--mid);
+  margin-bottom: 6px;
+}
+
+.prog-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.prog-detail {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--mid);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.prog-type {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid);
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  white-space: nowrap;
+  align-self: start;
+  margin-top: 4px;
+}
+.prog-type.premiere { border-color: var(--black); color: var(--black); }
+
+.programme-note {
+  margin-top: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--mid);
+}
+
+/* ─── BIO COMPOSITORI / ESECUTORI ────────────────────────── */
+.bio-block {
+  padding: 32px 0;
+  border-bottom: var(--rule-light);
+}
+.bio-block:first-child { border-top: var(--rule-light); }
+
+.bio-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.bio-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.bio-origin {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.bio-badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--black);
+  color: var(--white);
+  padding: 3px 8px;
+}
+
+.bio-text {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #333;
+  max-width: 760px;
+}
+
+.bio-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ─── TASHTEGO ───────────────────────────────────────────── */
+.tashtego-intro {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+.tashtego-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  border-top: var(--rule-light);
+}
+
+.tashtego-member {
+  padding: 18px 16px 18px 0;
+  border-bottom: var(--rule-light);
+  border-right: var(--rule-light);
+}
+
+.tm-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.tm-role {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--mid);
+  margin-top: 3px;
+}
+
+/* ─── BIGLIETTI ──────────────────────────────────────────── */
+.tickets-section { background: var(--black); color: var(--white); }
+
+.tickets-inner {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0 60px;
+  padding: 80px 0;
+  align-items: center;
+}
+
+.tickets-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #555;
+}
+
+.tickets-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.tickets-cta-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 52px);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.tickets-soon {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Pulsante biglietti — disabilitato finché non c'è il link */
+.tickets-btn {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+  background: var(--white);
+  padding: 18px 40px;
+  border: 1px solid var(--white);
+  white-space: nowrap;
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+/*
+  Quando i biglietti sono pronti, rimuovi le 3 righe qui sopra
+  (opacity / cursor / pointer-events) e decommmenta qui sotto:
+
+  .tickets-btn {
+    transition: background 0.2s, color 0.2s;
+  }
+  .tickets-btn:hover { background: transparent; color: var(--white); }
+*/
+
+/* ─── VENUE ──────────────────────────────────────────────── */
+.venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+
+.venue-address { font-size: 15px; font-weight: 300; line-height: 2; }
+
+.venue-directions {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--mid);
+  line-height: 1.8;
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+footer {
+  border-top: var(--rule);
+  padding: 32px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-copy {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--mid);
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  nav { padding: 12px 20px; }
+  .nav-info { display: none; }
+  .hero-content { padding: 40px 20px 40px; }
+  .container { padding: 0 20px; }
+  .section-inner { grid-template-columns: 1fr; gap: 0; }
+  .section-number { margin-bottom: 16px; }
+  .programme-item { grid-template-columns: 1fr; }
+  .prog-type { width: fit-content; margin-top: 8px; }
+  .tickets-inner { grid-template-columns: 1fr; }
+  .tickets-content { flex-direction: column; align-items: flex-start; }
+  .venue-grid { grid-template-columns: 1fr; gap: 30px; }
+  footer { padding: 24px 20px; }
+  .tashtego-member { border-right: none; padding-right: 0; }
+}
