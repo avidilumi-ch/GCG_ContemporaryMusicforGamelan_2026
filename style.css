@@ -678,6 +678,12 @@ footer {
   color: #888;
 }
 
+.footer-logo-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
 /* ─── PROGRAMME ACCORDION INLINE ────────────────────────── */
 .prog-title-btn {
   cursor: pointer;
