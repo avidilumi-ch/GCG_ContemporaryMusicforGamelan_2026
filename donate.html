@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Avidi Lumi CH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .donate-hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 120px 40px 80px;
+    }
+    .donate-hero-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .donate-hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: clamp(36px, 6vw, 72px);
+      line-height: 1.05;
+      text-transform: uppercase;
+      max-width: 700px;
+    }
+    .donate-hero-text {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.75;
+      max-width: 600px;
+      margin-top: 32px;
+      color: rgba(255,255,255,0.7);
+    }
+    .donate-section {
+      border-top: 1px solid #0c0c0c;
+    }
+    .donate-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+    .donate-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    .donate-block-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #888;
+      display: block;
+      margin-bottom: 24px;
+    }
+    .donate-qr {
+      width: 150px;
+      height: 150px;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .donate-bank-details {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      line-height: 2;
+      color: #333;
+    }
+    .donate-bank-details strong {
+      font-weight: 400;
+      color: #0c0c0c;
+    }
+    .donate-twint-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: #0c0c0c;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .donate-twint-note {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: #888;
+      letter-spacing: 0.06em;
+    }
+
+    /* Email form */
+    .donate-form-section {
+      background: #f5f4f0;
+      border-top: 1px solid #0c0c0c;
+    }
+    .donate-form-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+    .donate-form-text {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 560px;
+      color: #444;
+      margin-bottom: 28px;
+    }
+    .donate-form {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      max-width: 560px;
+    }
+    .donate-input {
+      flex: 1;
+      min-width: 200px;
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      padding: 12px 16px;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #0c0c0c;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .donate-input:focus { border-color: #0c0c0c; }
+    .donate-submit {
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      background: #0c0c0c;
+      color: #f5f4f0;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .donate-submit:hover { background: #333; }
+    .donate-form-note {
+      margin-top: 12px;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: #888;
+      letter-spacing: 0.06em;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+    .back-link:hover { color: #0c0c0c; }
+
+    @media (max-width: 768px) {
+      .donate-hero { padding: 100px 20px 60px; }
+      .donate-inner { padding: 40px 20px; }
+      .donate-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">GCG — Contemporary Music for Gamelan</a>
+    <span class="nav-info">7.06.2026 &nbsp;·&nbsp; Sommercasino Basel</span>
+    <div class="nav-links">
+      <a href="index.html#tickets" class="nav-ticket">Tickets →</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="donate-hero">
+    <div style="max-width:1200px;margin:0 auto;">
+      <a href="index.html" class="back-link">← Back</a>
+      <p class="donate-hero-label">Avidi Lumi CH</p>
+      <h1 class="donate-hero-title">Support the<br>next editions.</h1>
+      <p class="donate-hero-text">Help us build future editions of Contemporary Music for Gamelan and support the ongoing activities of Avidi Lumi CH — an association dedicated to contemporary music and artistic research in Basel.</p>
+    </div>
+  </div>
+
+  <!-- DONATION METHODS -->
+  <section class="donate-section">
+    <div class="donate-inner">
+      <div class="donate-grid">
+
+        <!-- IBAN -->
+        <div>
+          <span class="donate-block-label">Bank Transfer</span>
+          <img src="qr_iban.png" alt="QR IBAN Avidi Lumi CH" class="donate-qr">
+          <div class="donate-bank-details">
+            <strong>Avidi Lumi CH</strong><br>
+            IBAN &nbsp;CH26 0900 0000 1689 9152 6<br>
+            PostFinance<br>
+            <br>
+            avidilumi.ch@gmail.com
+          </div>
+        </div>
+
+        <!-- TWINT -->
+        <div>
+          <span class="donate-block-label">Twint</span>
+          <img src="qr_twint.png" alt="QR Twint Avidi Lumi CH" class="donate-qr">
+          <span class="donate-twint-num">+41 76 595 850 7</span>
+          <span class="donate-twint-note">Twint · Switzerland only</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL SIGNUP -->
+  <section class="donate-form-section">
+    <div class="donate-inner">
+      <p class="donate-form-title">Stay in touch</p>
+      <p class="donate-form-text">Leave your email to receive updates on future editions, invitations to events, and access to exclusive opportunities for supporters. We write rarely and only when it matters.</p>
+
+      <!--
+        Per attivare il form:
+        1. Vai su web3forms.com e crea un account gratuito
+        2. Ottieni la tua access key
+        3. Sostituisci YOUR_ACCESS_KEY qui sotto
+        4. Cambia action con il tuo form endpoint
+      -->
+      <form class="donate-form"
+            action="mailto:avidilumi.ch@gmail.com"
+            method="GET"
+            enctype="text/plain">
+        <input
+          class="donate-input"
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required>
+        <input
+          type="hidden"
+          name="subject"
+          value="Support Avidi Lumi CH — mailing list">
+        <button class="donate-submit" type="submit">Send</button>
+      </form>
+      <p class="donate-form-note">Optional · Your email will only be used for project updates.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <span class="footer-logo">GCG — Contemporary Music for Gamelan · Basel 2026</span>
+      <span class="footer-copy">7 June 2026 · Sommercasino Basel</span>
+      <a href="index.html#tickets" class="footer-copy">Tickets →</a>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-credits">
+        <span class="footer-credit-item">A project by Ivan Liuzzo</span>
+        <span class="footer-credit-sep">·</span>
+        <span class="footer-credit-item">Graphic design: Tzu-chi Su</span>
+        <span class="footer-credit-sep">·</span>
+        <span class="footer-credit-item">In collaboration with Avidi Lumi CH</span>
+      </div>
+      <div class="footer-logo-box">
+        <span class="footer-supported">Supported by</span>
+        <img src="FA_BSBL_MU_cmyk_print.png" alt="Fachausschuss Musik BS/BL" class="footer-canton-logo">
+        <img src="Saraswara_Original_on_Transparent.png" alt="Gamelan Saraswara" class="footer-canton-logo">
+        <img src="MAB_MSB.jpg" alt="Musik Akademie Basel" class="footer-canton-logo">
+        <img src="Indomeal.png" alt="Indomeal" class="footer-canton-logo" style="height:70px;">
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
